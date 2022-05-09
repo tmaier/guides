@@ -55,8 +55,17 @@
 - Use `it` block descriptions that describe the success and failure paths.
 - Use spec/system directory to store system specs.
 - Use spec/support/system for support code related to system specs.
+- Don't assert an element's state with `[class]` or `[data-*]` attributes.
+- Use [WAI-ARIA States and Properties][] (i.e. `[role]` or `[aria-*]`
+  attributes) when asserting an element's state.
+- Prefer assertions about implicit semantics and built-in attributes (e.g. an
+  `<input type="checkbox">` element and `[checked]`, an `<option>` element and
+  `[selected]`) over WAI-ARIA States and Properties (e.g. a `<button>` element and
+  `[aria-checked="true"]`, a `<div>` element and `[aria-selected="true"]`).
 
 > system specs were previously called feature specs and lived in `spec/features`
+
+[WAI-ARIA States and Properties]: https://www.w3.org/TR/wai-aria/#states_and_properties
 
 ## Factories
 
